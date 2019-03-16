@@ -1,0 +1,15 @@
+version: '2'
+services:
+  node:
+    build: .
+    ports:
+    - "3000:3000"
+    networks:
+    - redis
+  redis:
+    image: redis
+    networks:
+    - redis
+networks:
+  redis:
+    driver: bridge

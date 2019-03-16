@@ -1,0 +1,15 @@
+{
+  "name": "node_redis",
+  "version": "1.0.0",
+  "description": "Unique IDs notifier using node and redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Chinmay Patil",
+  "license": "ISC",
+  "dependencies": {
+    "redis": "^2.8.0"
+  }
+}
