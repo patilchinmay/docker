@@ -40,7 +40,7 @@ exports.get_all_users = (req, res) => {
 }
 
 exports.add_user = (req, res) => {
-    const id = req.params._id;
+    let id = String(req.params.id);
 
     client.sadd("user_ids", id, function(err, result){
 
