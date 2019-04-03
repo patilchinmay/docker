@@ -1,0 +1,22 @@
+{
+  "name": "redis_unique_finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "*",
+    "redis": "*",
+    "http": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patilchinmay/docker/tree/master/redis_unique_finder"
+  },
+  "author": "Chinmay Patil",
+  "license": "ISC"
+}
