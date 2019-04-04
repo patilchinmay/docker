@@ -4,10 +4,34 @@
     </head>
 
     <body>
-        <p id="p1">Hello World!</p>  
+        <p id="p1">Hello World!</p>
+        <p id="p2">All User Ids</p>  
 
         <script>
             document.getElementById("p1").innerHTML = "Mooh!";
         </script>
+
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                 $.ajax({
+                    type: "GET",
+                    url: "http://127.0.0.1:3000/users/all",
+                    contentType: 'application/json',
+                    success: function(response) {
+                           alert("success!");
+                           console.log(response);
+                           $("#p2").html(JSON.stringify(response));
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                            alert("error");
+                    },
+                });
+            });
+            </script>
     </body>
 </html> 
