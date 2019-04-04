@@ -27,6 +27,9 @@ app.use((req, res, next) => {
 // Routes which should handle requests
 app.use('/users', userRoutes);
 
+// Serve static files
+app.use('/', express.static('view'));
+
 var redis = require('redis');
 var client = redis.createClient(6379, 'redis')
 
