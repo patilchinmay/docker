@@ -42,20 +42,36 @@ exports.get_all_users = (req, res) => {
 exports.add_user = (req, res) => {
     let id = String(req.params.id);
 
+    console.log(`id = ${id}`);
+
     client.sadd("user_ids", id, function(err, result){
 
-        if(result){
-            console.log(result);
+        if(result == 1){
+
+            console.log(`result = ${result}`);
 
             return res.status(200).json({
-                "result": result
-            });           
-        }else if (err){
+                "result": result,
+                "duplicate": false
+            });
+
+        } else if(result == 0){
+
+            console.log(`result = ${result}`);
+
+            return res.status(500).json({
+                "result": result,
+                "duplicate": true
+            });
+
+        } else if (err){
+
             console.log(err);
 
             return res.status(500).json({
                 "error": err
             });
+
         }
         
     });
